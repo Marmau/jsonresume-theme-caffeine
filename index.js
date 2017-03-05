@@ -41,7 +41,12 @@ handlebars.registerHelper({
     },
 
     formatDate: function(date) {
-        return moment(date).format('MM/YYYY');
+        moment.locale('fr');
+        var format = 'MMM YYYY';
+        if (date.split("-").length == 1) {
+            format = 'YYYY';
+        }
+        return moment(date).format(format);
     }
 });
 

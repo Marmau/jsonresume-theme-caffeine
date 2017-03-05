@@ -16,10 +16,12 @@
             {{#if endDate}}
             <span class="endDate"> - {{formatDate endDate}}</span>
             {{else}}
-            <span class="endDate"> - Present</span>
+            <span class="endDate"> - ...</span>
             {{/if}}
         {{else if releaseDate}}
             {{formatDate releaseDate}}
+        {{else if date}}
+            {{formatDate date}}
         {{/if}}
     </h5>
 </div>

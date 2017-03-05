@@ -1,15 +1,19 @@
 {{#if resume.education.length}}
 <div class="container education-container">
-    {{> title value="Education"}}
+    {{> title value="Formation"}}
 
     {{#each resume.education}}
         <section class="item">
-            {{> section-header name=this.institution }}
-
-            <h4>{{#if studyType}}{{studyType}} {{/if}}{{#if area}}{{area}}{{/if}}</h4>
+            {{> section-header name=(concat studyType) }}
+            {{#if area}}
+                <h4>{{area}}</h4>
+            {{/if}}
+            {{#if institution}}
+                <h5>{{institution}} </h5>
+            {{/if}}
 
             {{#if gpa}}
-            <h5>{{gpa}}</h5>
+                <h5>{{gpa}}</h5>
             {{/if}}
 
             {{#if courses.length}}
